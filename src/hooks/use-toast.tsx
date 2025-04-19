@@ -1,6 +1,5 @@
 
-import { Toast, ToastActionElement, ToastProps } from "@/components/ui/toast"
-import { useToast as useToastOriginal } from "@radix-ui/react-toast"
+import { ToastActionElement, ToastProps } from "@/components/ui/toast"
 import {
   ReactNode,
   createContext,
@@ -8,7 +7,7 @@ import {
   useState,
 } from "react"
 
-type ToasterToast = Toast & {
+type ToasterToast = ToastProps & {
   id: string
   title?: ReactNode
   description?: ReactNode
@@ -17,12 +16,12 @@ type ToasterToast = Toast & {
 
 const ToastContext = createContext<{
   toasts: ToasterToast[]
-  addToast: (toast: Toast) => void
+  addToast: (toast: ToastProps) => string
   removeToast: (id: string) => void
-  updateToast: (id: string, toast: Toast) => void
+  updateToast: (id: string, toast: ToastProps) => void
 }>({
   toasts: [],
-  addToast: () => {},
+  addToast: () => "",
   removeToast: () => {},
   updateToast: () => {},
 })
@@ -34,7 +33,7 @@ export function ToastProvider({
 }) {
   const [toasts, setToasts] = useState<ToasterToast[]>([])
 
-  const addToast = (toast: Toast) => {
+  const addToast = (toast: ToastProps) => {
     const id = crypto.randomUUID()
     setToasts((prevToasts) => [...prevToasts, { ...toast, id }])
     return id
@@ -44,7 +43,7 @@ export function ToastProvider({
     setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id))
   }
 
-  const updateToast = (id: string, toast: Toast) => {
+  const updateToast = (id: string, toast: ToastProps) => {
     setToasts((prevToasts) =>
       prevToasts.map((t) => (t.id === id ? { ...t, ...toast } : t))
     )
@@ -65,7 +64,7 @@ export function useToast() {
   
   return {
     ...context,
-    toast: (props: Toast) => context.addToast(props),
+    toast: (props: ToastProps) => context.addToast(props),
     dismiss: (id: string) => context.removeToast(id),
   }
 }
@@ -74,24 +73,24 @@ export type { ToasterToast }
 
 export const toast = {
   // Default toast
-  default: (props: Toast) => {
+  default: (props: ToastProps) => {
     const { toast } = useToast()
     return toast(props)
   },
   // Variants
-  info: (props: Toast) => {
+  info: (props: ToastProps) => {
     const { toast } = useToast()
     return toast({ ...props, variant: "default" })
   },
-  success: (props: Toast) => {
+  success: (props: ToastProps) => {
     const { toast } = useToast()
     return toast({ ...props, variant: "success" })
   },
-  warning: (props: Toast) => {
+  warning: (props: ToastProps) => {
     const { toast } = useToast()
     return toast({ ...props, variant: "warning" })
   },
-  error: (props: Toast) => {
+  error: (props: ToastProps) => {
     const { toast } = useToast()
     return toast({ ...props, variant: "destructive" })
   },
