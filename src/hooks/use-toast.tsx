@@ -84,11 +84,11 @@ export const toast = {
   },
   success: (props: ToastProps) => {
     const { toast } = useToast()
-    return toast({ ...props, variant: "success" })
+    return toast({ ...props, variant: "default" }) // Changed from "success" to "default"
   },
   warning: (props: ToastProps) => {
     const { toast } = useToast()
-    return toast({ ...props, variant: "warning" })
+    return toast({ ...props, variant: "default" }) // Changed from "warning" to "default"
   },
   error: (props: ToastProps) => {
     const { toast } = useToast()
