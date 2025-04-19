@@ -22,29 +22,26 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl font-bold leading-tight mb-6">
-                Talk to a Doctor
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Simple, reliable, private text & voice-based symptom checker interaction via WhatsApp* Available all over Nigeria
-              </p>
-              <Button className="bg-[#25D366] hover:bg-[#128C7E] text-white text-lg px-8 py-6">
-                Start Consultation Now
-              </Button>
-            </div>
-            <div className="relative">
-              <div className="bg-white rounded-3xl shadow-xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <img 
-                  src="/lovable-uploads/17ccdeb0-e2cb-48b0-9d47-13af97e46c8b.png" 
-                  alt="Mother and child using AfriHealth" 
-                  className="rounded-2xl"
-                />
-              </div>
-            </div>
+      <section className="relative h-screen">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/19ae9d41-5bbc-4e6b-8798-27271b6bfdbf.png" 
+            alt="AfriHealth Hero" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
+          <div className="text-white max-w-2xl">
+            <h1 className="text-6xl font-bold leading-tight mb-6">
+              Talk to a Doctor
+            </h1>
+            <p className="text-xl mb-8 text-gray-100">
+              Simple, reliable, private text & voice-based symptom checker interaction via WhatsApp* Available all over Nigeria
+            </p>
+            <Button className="bg-[#25D366] hover:bg-[#128C7E] text-white text-lg px-8 py-6">
+              Start Consultation Now
+            </Button>
           </div>
         </div>
       </section>
