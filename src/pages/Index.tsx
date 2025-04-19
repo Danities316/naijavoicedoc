@@ -95,11 +95,12 @@ const Index = () => {
                 Learn More
               </Button>
             </div>
-            <div className="bg-white rounded-3xl shadow-xl p-6">
-              {/* Placeholder for dashboard image */}
-              <div className="bg-gray-200 rounded-2xl h-[300px] flex items-center justify-center">
-                <span className="text-gray-500">Dashboard Preview</span>
-              </div>
+            <div className="relative bg-white rounded-3xl shadow-xl p-6 transform hover:scale-[1.02] transition-transform duration-300">
+              <img 
+                src="/lovable-uploads/a5a7d02e-7794-4ae8-83b5-70fa8301dcd5.png" 
+                alt="AfriHealth Dashboard" 
+                className="w-full h-auto rounded-2xl"
+              />
             </div>
           </div>
         </div>
