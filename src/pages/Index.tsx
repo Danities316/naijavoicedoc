@@ -1,4 +1,3 @@
-
 import { MessageCircle, Phone, Globe, ChartBar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -28,20 +27,20 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl font-bold leading-tight mb-6">
-                Healthcare Made Simple with AI-Powered WhatsApp Chat
+                Talk to a Doctor
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Access medical triage, language translation, and voice-based healthcare support across Nigeria's languages.
+                Simple, reliable, private text & voice-based symptom checker interaction via WhatsApp* Available all over Nigeria
               </p>
               <Button className="bg-[#25D366] hover:bg-[#128C7E] text-white text-lg px-8 py-6">
-                Try AfriHealth Now
+                Start Consultation Now
               </Button>
             </div>
             <div className="relative">
               <div className="bg-white rounded-3xl shadow-xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-300">
                 <img 
-                  src="/lovable-uploads/a5a7d02e-7794-4ae8-83b5-70fa8301dcd5.png" 
-                  alt="AfriHealth Interface" 
+                  src="/lovable-uploads/17ccdeb0-e2cb-48b0-9d47-13af97e46c8b.png" 
+                  alt="Mother and child using AfriHealth" 
                   className="rounded-2xl"
                 />
               </div>
